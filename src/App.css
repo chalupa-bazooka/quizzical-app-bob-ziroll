@@ -1,0 +1,62 @@
+body {
+    color: #293264;
+    padding: 50px 50px;
+    background-color: #293264;
+}
+
+
+/* IntroScreen */
+.IntroScreen__General {
+    height: 550px;
+    width: 550px;
+    background-color: #F5F7FB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.IntroScreen__Title {
+    font-family: "Karla", sans-serif;
+    font-size: 31.25px;
+    letter-spacing: 1px;
+    margin-bottom: 7px;
+}
+
+.IntroScreen__Subtitle,
+.IntroScreen__Button {
+    font-family: "Inter", sans-serif;
+    font-size: 16px;
+}
+
+.IntroScreen__Subtitle {
+    margin-top: 7px;
+    margin-bottom: 0;
+}
+
+.IntroScreen__Button {
+    color: #F5F7FB;
+    background-color: #4D5B9E;
+    border: none;
+    border-radius: 15px;
+    height: 52px;
+    width: 193px;
+    margin-top: 29px;
+    cursor: pointer;
+}
+
+.IntroScreen__Image--BlobOrange,
+.IntroScreen__Image--BlobBlue {
+    position: absolute;
+}
+
+.IntroScreen__Image--BlobOrange {
+    top: 0;
+    right: 0;
+}
+
+.IntroScreen__Image--BlobBlue {
+    bottom: 0;
+    left: 0;
+}
