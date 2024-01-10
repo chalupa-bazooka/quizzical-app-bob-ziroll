@@ -2,6 +2,7 @@ body {
     color: #293264;
     padding: 50px 50px;
     background-color: #293264;
+    box-sizing: border-box;
 }
 
 
@@ -59,4 +60,53 @@ body {
 .IntroScreen__Image--BlobBlue {
     bottom: 0;
     left: 0;
+}
+
+
+
+
+/* QuizPage */
+.QuizPage__General {
+    height: 550px;
+    width: 550px;
+    background-color: #F5F7FB;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+
+/* Question */
+
+.Question__General {
+    width: 399px;
+    border-bottom: 1px solid #DBDEF0;
+    padding-bottom: 17px;
+}
+
+.Question__Title {
+    font-family: "Karla", sans-serif;
+    font-size: 16;
+    font-weight: 600;
+}
+
+.Question__AnswersRow {
+    display: flex;
+    gap: 13px;
+}
+
+.Question__SingleAnswer {
+    font-family: "Inter", sans-serif;
+    font-size: 10.24px;
+    border: 1px solid #4D5B9E;
+    border-radius: 7.94239px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 45.92px;
+    height: 20.65px;
+    padding: 0 10px;
 }
