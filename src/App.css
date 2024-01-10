@@ -65,6 +65,7 @@ body {
 
 
 
+
 /* QuizPage */
 .QuizPage__General {
     height: 550px;
@@ -77,25 +78,58 @@ body {
     position: relative;
 }
 
+.QuizPage__Button {
+    color: #F5F7FB;
+    background-color: #4D5B9E;
+    border: none;
+    border-radius: 10px;
+    width: 120px;
+    height: 35px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.QuizPage__Image--BlobOrange {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.QuizPage__Image--BlobBlue {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+
+
 
 
 /* Question */
-
 .Question__General {
     width: 399px;
     border-bottom: 1px solid #DBDEF0;
     padding-bottom: 17px;
+    margin-bottom: 0;
+}
+
+.Question__General:first-of-type .Question__Title{
+    margin-top: 0px;
 }
 
 .Question__Title {
     font-family: "Karla", sans-serif;
     font-size: 16;
     font-weight: 600;
+    margin-top: 14px;
+    margin-bottom: 12px;
+    width: 400px;
 }
 
 .Question__AnswersRow {
     display: flex;
     gap: 13px;
+    width: 500px;
 }
 
 .Question__SingleAnswer {
@@ -109,4 +143,5 @@ body {
     min-width: 45.92px;
     height: 20.65px;
     padding: 0 10px;
+    cursor: pointer;
 }
