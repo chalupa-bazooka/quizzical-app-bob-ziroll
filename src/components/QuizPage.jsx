@@ -1,12 +1,11 @@
 import Question from "./Question.jsx";
-import { questionsData } from "../data.js";
 import { nanoid } from "nanoid";
 
-export default function QuizPage() {
+export default function QuizPage({questions}) {
     return (
         <div className="QuizPage__General">
-            {questionsData.map((question) => {
-                return <Question questionData={question} key={nanoid()} />
+            {questions.map((question) => {
+                return <Question question={question} key={nanoid()} />
             })}
             <button className="QuizPage__Button">
                 Check answers

@@ -2,7 +2,7 @@ export const questionsData = [
     // 1
     {
         position: 1,
-        question: "How would one say goodbye in Spanish?",
+        title: "How would one say goodbye in Spanish?",
         answer1: {
             answer: "Adiós",
             correct: true
@@ -24,7 +24,7 @@ export const questionsData = [
     // 2
     {
         position: 2,
-        question: "Which best selling toy of 1983 caused hysteria, resulting in riots breaking in stores?",
+        title: "Which best selling toy of 1983 caused hysteria, resulting in riots breaking in stores?",
         answer1: {
             answer: "Cabbage Patch Kids",
             correct: false
@@ -46,7 +46,7 @@ export const questionsData = [
     // 3
     {
         position: 3,
-        question: "What is the hottest planet in our Solar System?",
+        title: "What is the hottest planet in our Solar System?",
         answer1: {
             answer: "Mercury",
             correct: false
@@ -68,7 +68,7 @@ export const questionsData = [
     // 4
     {
         position: 4,
-        question: "In which country was the caesar salad invented?",
+        title: "In which country was the caesar salad invented?",
         answer1: {
             answer: "Italy",
             correct: false
@@ -90,7 +90,7 @@ export const questionsData = [
     // 5
     {
         position: 5,
-        question: "How many hearts does an octopus have?",
+        title: "How many hearts does an octopus have?",
         answer1: {
             answer: "One",
             correct: false
