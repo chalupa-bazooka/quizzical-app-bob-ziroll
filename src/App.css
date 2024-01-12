@@ -130,6 +130,8 @@ body {
     display: flex;
     gap: 13px;
     width: 500px;
+    border: none;
+    padding-left: 0;
 }
 
 .Question__SingleAnswer {
@@ -144,4 +146,22 @@ body {
     height: 20.65px;
     padding: 0 10px;
     cursor: pointer;
+}
+
+.Question__SingleAnswerTest {
+    font-family: "Inter", sans-serif;
+    font-size: 10.24px;
+    border: 1px solid #4D5B9E;
+    border-radius: 7.94239px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 45.92px;
+    height: 20.65px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.Question__SingleAnswerTestInput {
+    display: none;
 }
