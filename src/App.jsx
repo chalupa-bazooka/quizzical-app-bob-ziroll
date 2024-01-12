@@ -15,7 +15,7 @@ export default function App() {
 
   return (
     <>
-      <RadioButtonTest/>
+      <RadioButtonTest questions={questions}/>
       {/* <QuizPage questions={questions}/> */}
       {/* <IntroScreen/> */}
     </>
