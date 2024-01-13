@@ -15,7 +15,7 @@ answers (chosen answers) with questions (if the chosen answers are correct)
 - if successful, transfer the code to the Question component
 */}
 
-export default function RadioButtonTest({questions}) {
+export default function RadioButtonTest({ questions }) {
     const [answers, setAnswers] = useState({
         goodbyeInSpanish: ""
     })
@@ -32,54 +32,81 @@ export default function RadioButtonTest({questions}) {
             <h1>Radio Buttons Test</h1>
 
             <div className="Question__General">
+
                 <p className="Question__Title">{questions[0].title}</p>
+
                 <fieldset className="Question__AnswersRow">
-                    <label htmlFor="radio1" className="Question__SingleAnswerTest">
+
+                    <label
+                        htmlFor="radio1"
+                        className=
+                        {answers[questions[0].relatedAnswersProperty] === questions[0].answer1.answer
+                            ? "Question__SingleAnswerCheckedTest"
+                            : "Question__SingleAnswerTest"}
+                    >
                         <input
                             className="Question__SingleAnswerTestInput"
                             type="radio"
                             id="radio1"
-                            name="goodbyeInSpanish"
-                            value="adiós"
-                            checked={answers.goodbyeInSpanish === "adiós"}
+                            name={questions[0].relatedAnswersProperty}
+                            value={questions[0].answer1.answer}
+                            checked={answers.goodbyeInSpanish === questions[0].answer1.answer}
                             onChange={handleChange}
                         />
                         {questions[0].answer1.answer}
                     </label>
 
-                    <label htmlFor="radio2" className="Question__SingleAnswerTest">
+                    <label
+                        htmlFor="radio2"
+                        className=
+                        {answers[questions[0].relatedAnswersProperty] === questions[0].answer2.answer
+                            ? "Question__SingleAnswerCheckedTest"
+                            : "Question__SingleAnswerTest"}
+                    >
                         <input
                             className="Question__SingleAnswerTestInput"
                             type="radio"
                             id="radio2"
-                            name="goodbyeInSpanish"
-                            value="hola"
+                            name={questions[0].relatedAnswersProperty}
+                            value={questions[0].answer2.answer}
                             checked={answers.goodbyeInSpanish === "hola"}
                             onChange={handleChange}
                         />
                         {questions[0].answer2.answer}
                     </label>
 
-                    <label htmlFor="radio3" className="Question__SingleAnswerTest">
+                    <label
+                        htmlFor="radio3"
+                        className=
+                        {answers[questions[0].relatedAnswersProperty] === questions[0].answer3.answer
+                            ? "Question__SingleAnswerCheckedTest"
+                            : "Question__SingleAnswerTest"}
+                    >
                         <input
                             className="Question__SingleAnswerTestInput"
                             type="radio"
                             id="radio3"
-                            name="goodbyeInSpanish"
-                            value="au revoir"
+                            name={questions[0].relatedAnswersProperty}
+                            value={questions[0].answer3.answer}
                             checked={answers.goodbyeInSpanish === "au revoir"}
                             onChange={handleChange}
                         />
                         {questions[0].answer3.answer}
                     </label>
 
-                    <label htmlFor="radio4" className="Question__SingleAnswerTest">
+                    <label
+                        htmlFor="radio4"
+                        className=
+                        {answers[questions[0].relatedAnswersProperty] === questions[0].answer4.answer
+                            ? "Question__SingleAnswerCheckedTest"
+                            : "Question__SingleAnswerTest"}
+                    >
                         <input
                             className="Question__SingleAnswerTestInput"
                             type="radio"
                             id="radio4"
-                            name="goodbyeInSpanish"
-                            value="salir"
+                            name={questions[0].relatedAnswersProperty}
+                            value={questions[0].answer4.answer}
                             checked={answers.goodbyeInSpanish === "salir"}
                             onChange={handleChange}
                         />
