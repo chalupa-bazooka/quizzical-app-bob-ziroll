@@ -1,12 +1,9 @@
 import { useState } from "react";
+import { nanoid } from "nanoid";
 
 {/* 
 to do:
-- add styles for selected (for buttons to get background color)
-- see what you can do with inputs' properties
-- add more object properties (questions 2, 3, 4...)
-- first manually add those questions + answers
-- then try mapping it
+- can we somehow map answers not to have them as 4 separate elements but as just one?
 - add submit button
 - on submit we gotta compare our states:
 answers (chosen answers) with questions (if the chosen answers are correct)
@@ -17,7 +14,10 @@ answers (chosen answers) with questions (if the chosen answers are correct)
 
 export default function RadioButtonTest({ questions }) {
     const [answers, setAnswers] = useState({
-        goodbyeInSpanish: ""
+        [questions[0].relatedAnswerProperty]: "",
+        [questions[1].relatedAnswerProperty]: "",
+        [questions[2].relatedAnswerProperty]: "",
+        [questions[3].relatedAnswerProperty]: "",
     })
 
     function handleChange(event) {
@@ -30,90 +30,85 @@ export default function RadioButtonTest({ questions }) {
     return (
         <div className="QuizPage__General">
             <h1>Radio Buttons Test</h1>
+            {
+                questions.map((question) => {
+                    return (
+                        <div className="Question__General" key={nanoid()}>
+                            <p className="Question__Title">{question.title}</p>
+                            <fieldset className="Question__AnswersRow">
 
-            <div className="Question__General">
+                                <label
+                                    className=
+                                    {answers[question.relatedAnswersProperty] === question.answer1.answer
+                                        ? "Question__SingleAnswerCheckedTest"
+                                        : "Question__SingleAnswerTest"}
+                                >
+                                    <input
+                                        className="Question__SingleAnswerTestInput"
+                                        type="radio"
+                                        name={question.relatedAnswersProperty}
+                                        value={question.answer1.answer}
+                                        checked={answers[question.relatedAnswersProperty] === question.answer1.answer}
+                                        onChange={handleChange}
+                                    />
+                                    {question.answer1.answer}
+                                </label>
 
-                <p className="Question__Title">{questions[0].title}</p>
+                                <label
+                                    className=
+                                    {answers[question.relatedAnswersProperty] === question.answer2.answer
+                                        ? "Question__SingleAnswerCheckedTest"
+                                        : "Question__SingleAnswerTest"}
+                                >
+                                    <input
+                                        className="Question__SingleAnswerTestInput"
+                                        type="radio"
+                                        name={question.relatedAnswersProperty}
+                                        value={question.answer2.answer}
+                                        checked={answers[question.relatedAnswersProperty] === question.answer2.answer}
+                                        onChange={handleChange}
+                                    />
+                                    {question.answer2.answer}
+                                </label>
 
-                <fieldset className="Question__AnswersRow">
+                                <label
+                                    className=
+                                    {answers[question.relatedAnswersProperty] === question.answer3.answer
+                                        ? "Question__SingleAnswerCheckedTest"
+                                        : "Question__SingleAnswerTest"}
+                                >
+                                    <input
+                                        className="Question__SingleAnswerTestInput"
+                                        type="radio"
+                                        name={question.relatedAnswersProperty}
+                                        value={question.answer3.answer}
+                                        checked={answers[question.relatedAnswersProperty] === question.answer3.answer}
+                                        onChange={handleChange}
+                                    />
+                                    {question.answer3.answer}
+                                </label>
 
-                    <label
-                        htmlFor="radio1"
-                        className=
-                        {answers[questions[0].relatedAnswersProperty] === questions[0].answer1.answer
-                            ? "Question__SingleAnswerCheckedTest"
-                            : "Question__SingleAnswerTest"}
-                    >
-                        <input
-                            className="Question__SingleAnswerTestInput"
-                            type="radio"
-                            id="radio1"
-                            name={questions[0].relatedAnswersProperty}
-                            value={questions[0].answer1.answer}
-                            checked={answers.goodbyeInSpanish === questions[0].answer1.answer}
-                            onChange={handleChange}
-                        />
-                        {questions[0].answer1.answer}
-                    </label>
-
-                    <label
-                        htmlFor="radio2"
-                        className=
-                        {answers[questions[0].relatedAnswersProperty] === questions[0].answer2.answer
-                            ? "Question__SingleAnswerCheckedTest"
-                            : "Question__SingleAnswerTest"}
-                    >
-                        <input
-                            className="Question__SingleAnswerTestInput"
-                            type="radio"
-                            id="radio2"
-                            name={questions[0].relatedAnswersProperty}
-                            value={questions[0].answer2.answer}
-                            checked={answers.goodbyeInSpanish === "hola"}
-                            onChange={handleChange}
-                        />
-                        {questions[0].answer2.answer}
-                    </label>
-
-                    <label
-                        htmlFor="radio3"
-                        className=
-                        {answers[questions[0].relatedAnswersProperty] === questions[0].answer3.answer
-                            ? "Question__SingleAnswerCheckedTest"
-                            : "Question__SingleAnswerTest"}
-                    >
-                        <input
-                            className="Question__SingleAnswerTestInput"
-                            type="radio"
-                            id="radio3"
-                            name={questions[0].relatedAnswersProperty}
-                            value={questions[0].answer3.answer}
-                            checked={answers.goodbyeInSpanish === "au revoir"}
-                            onChange={handleChange}
-                        />
-                        {questions[0].answer3.answer}
-                    </label>
-
-                    <label
-                        htmlFor="radio4"
-                        className=
-                        {answers[questions[0].relatedAnswersProperty] === questions[0].answer4.answer
-                            ? "Question__SingleAnswerCheckedTest"
-                            : "Question__SingleAnswerTest"}
-                    >
-                        <input
-                            className="Question__SingleAnswerTestInput"
-                            type="radio"
-                            id="radio4"
-                            name={questions[0].relatedAnswersProperty}
-                            value={questions[0].answer4.answer}
-                            checked={answers.goodbyeInSpanish === "salir"}
-                            onChange={handleChange}
-                        />
-                        {questions[0].answer4.answer}
-                    </label>
-                </fieldset>
-            </div>
+                                <label
+                                    className=
+                                    {answers[question.relatedAnswersProperty] === question.answer4.answer
+                                        ? "Question__SingleAnswerCheckedTest"
+                                        : "Question__SingleAnswerTest"}
+                                >
+                                    <input
+                                        className="Question__SingleAnswerTestInput"
+                                        type="radio"
+                                        name={question.relatedAnswersProperty}
+                                        value={question.answer4.answer}
+                                        checked={answers[question.relatedAnswersProperty] === question.answer4.answer}
+                                        onChange={handleChange}
+                                    />
+                                    {question.answer4.answer}
+                                </label>
+                            </fieldset>
+                        </div>
+                    )
+                })
+            }
         </div>
     )
 }
