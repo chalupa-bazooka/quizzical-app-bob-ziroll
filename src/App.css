@@ -113,7 +113,7 @@ body {
     margin-bottom: 0;
 }
 
-.Question__General:first-of-type .Question__Title{
+.Question__General:first-of-type .Question__Title {
     margin-top: 0px;
 }
 
@@ -148,7 +148,8 @@ body {
     cursor: pointer;
 }
 
-.Question__SingleAnswerTest {
+.Question__SingleAnswerTest,
+.Question__SingleAnswerCheckedTest {
     font-family: "Inter", sans-serif;
     font-size: 10.24px;
     border: 1px solid #4D5B9E;
@@ -156,10 +157,16 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-width: 45.92px;
+    min-width: 65.92px;
     height: 20.65px;
     padding: 0 10px;
     cursor: pointer;
+    box-sizing: border-box;
+}
+
+.Question__SingleAnswerCheckedTest {
+    background: #D6DBF5;
+    border: none;
 }
 
 .Question__SingleAnswerTestInput {
