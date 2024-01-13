@@ -31,79 +31,37 @@ export default function RadioButtonTest({ questions }) {
         <div className="QuizPage__General">
             <h1>Radio Buttons Test</h1>
             {
+                // mapping question objects (from the "questions" state)
                 questions.map((question) => {
                     return (
                         <div className="Question__General" key={nanoid()}>
                             <p className="Question__Title">{question.title}</p>
                             <fieldset className="Question__AnswersRow">
 
-                                <label
-                                    className=
-                                    {answers[question.relatedAnswersProperty] === question.answer1.answer
-                                        ? "Question__SingleAnswerCheckedTest"
-                                        : "Question__SingleAnswerTest"}
-                                >
-                                    <input
-                                        className="Question__SingleAnswerTestInput"
-                                        type="radio"
-                                        name={question.relatedAnswersProperty}
-                                        value={question.answer1.answer}
-                                        checked={answers[question.relatedAnswersProperty] === question.answer1.answer}
-                                        onChange={handleChange}
-                                    />
-                                    {question.answer1.answer}
-                                </label>
-
-                                <label
-                                    className=
-                                    {answers[question.relatedAnswersProperty] === question.answer2.answer
-                                        ? "Question__SingleAnswerCheckedTest"
-                                        : "Question__SingleAnswerTest"}
-                                >
-                                    <input
-                                        className="Question__SingleAnswerTestInput"
-                                        type="radio"
-                                        name={question.relatedAnswersProperty}
-                                        value={question.answer2.answer}
-                                        checked={answers[question.relatedAnswersProperty] === question.answer2.answer}
-                                        onChange={handleChange}
-                                    />
-                                    {question.answer2.answer}
-                                </label>
-
-                                <label
-                                    className=
-                                    {answers[question.relatedAnswersProperty] === question.answer3.answer
-                                        ? "Question__SingleAnswerCheckedTest"
-                                        : "Question__SingleAnswerTest"}
-                                >
-                                    <input
-                                        className="Question__SingleAnswerTestInput"
-                                        type="radio"
-                                        name={question.relatedAnswersProperty}
-                                        value={question.answer3.answer}
-                                        checked={answers[question.relatedAnswersProperty] === question.answer3.answer}
-                                        onChange={handleChange}
-                                    />
-                                    {question.answer3.answer}
-                                </label>
-
-                                <label
-                                    className=
-                                    {answers[question.relatedAnswersProperty] === question.answer4.answer
-                                        ? "Question__SingleAnswerCheckedTest"
-                                        : "Question__SingleAnswerTest"}
-                                >
-                                    <input
-                                        className="Question__SingleAnswerTestInput"
-                                        type="radio"
-                                        name={question.relatedAnswersProperty}
-                                        value={question.answer4.answer}
-                                        checked={answers[question.relatedAnswersProperty] === question.answer4.answer}
-                                        onChange={handleChange}
-                                    />
-                                    {question.answer4.answer}
-                                </label>
+                                {
+                                    // mapping answer options (objects inside answerOptions array from the "questions" state)
+                                    question.answerOptions.map((answerOption) => {
+                                        return (
+                                            <label
+                                                className=
+                                                {answers[question.relatedAnswersProperty] === answerOption.answer
+                                                    ? "Question__SingleAnswerCheckedTest"
+                                                    : "Question__SingleAnswerTest"}
+                                                key={nanoid()}
+                                            >
+                                                <input
+                                                    className="Question__SingleAnswerTestInput"
+                                                    type="radio"
+                                                    name={question.relatedAnswersProperty}
+                                                    value={answerOption.answer}
+                                                    checked={answers[question.relatedAnswersProperty] === answerOption.answer}
+                                                    onChange={handleChange}
+                                                />
+                                                {answerOption.answer}
+                                            </label>
+                                        )
+                                    })
+                                }
                             </fieldset>
                         </div>
                     )
