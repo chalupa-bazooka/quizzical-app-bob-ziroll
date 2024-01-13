@@ -13,12 +13,12 @@ answers (chosen answers) with questions (if the chosen answers are correct)
 */}
 
 export default function RadioButtonTest({ questions }) {
-    const [answers, setAnswers] = useState({
-        [questions[0].relatedAnswerProperty]: "",
-        [questions[1].relatedAnswerProperty]: "",
-        [questions[2].relatedAnswerProperty]: "",
-        [questions[3].relatedAnswerProperty]: "",
+    const [answers, setAnswers] = useState(() => {
+        return questions.map((question) => {
+            return question.relatedAnswerProperty
+        })
     })
+
 
     function handleChange(event) {
         console.log(event.target.name, event.target.value)
