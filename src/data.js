@@ -1,116 +1,122 @@
 export const questionsData = [
     // 1
     {
-        position: 1,
         title: "How would one say goodbye in Spanish?",
         relatedAnswersProperty: "goodbyeInSpanish",
-        answer1: {
-            answer: "Adiós",
-            correct: true
-        },
-        answer2: {
-            answer: "Hola",
-            correct: false
-        },
-        answer3: {
-            answer: "Au Revoir",
-            correct: false
-        },
-        answer4: {
-            answer: "Salir",
-            correct: false
-        }
+        answerOptions:
+            [
+                {
+                    answer: "Adiós",
+                    correct: true
+                },
+                {
+                    answer: "Adiós",
+                    correct: false
+                },
+                {
+                    answer: "Au Revoir",
+                    correct: false
+                },
+                {
+                    answer: "Salir",
+                    correct: false
+                },
+            ]
     },
 
     // 2
     {
-        position: 2,
         title: "Which best selling toy of 1983 caused hysteria, resulting in riots breaking in stores?",
         relatedAnswersProperty: "bestSellingToy1983",
-        answer1: {
-            answer: "Cabbage Patch Kids",
-            correct: false
-        },
-        answer2: {
-            answer: "Transformers",
-            correct: false
-        },
-        answer3: {
-            answer: "Care bears",
-            correct: true
-        },
-        answer4: {
-            answer: "Rubik's Cube",
-            correct: false
-        }
+        answerOptions: [
+            {
+                answer: "Cabbage Patch Kids",
+                correct: false
+            },
+            {
+                answer: "Transformers",
+                correct: false
+            },
+            {
+                answer: "Care bears",
+                correct: true
+            },
+            {
+                answer: "Rubik's Cube",
+                correct: false
+            }
+        ]
     },
 
     // 3
     {
-        position: 3,
         title: "What is the hottest planet in our Solar System?",
         relatedAnswersProperty: "hottestPlanet",
-        answer1: {
-            answer: "Mercury",
-            correct: false
-        },
-        answer2: {
-            answer: "Venus",
-            correct: true
-        },
-        answer3: {
-            answer: "Mars",
-            correct: false
-        },
-        answer4: {
-            answer: "Saturn",
-            correct: false
-        }
+        answerOptions: [
+            {
+                answer: "Mercury",
+                correct: false
+            },
+            {
+                answer: "Venus",
+                correct: true
+            },
+            {
+                answer: "Mars",
+                correct: false
+            },
+            {
+                answer: "Saturn",
+                correct: false
+            }
+        ]
     },
 
     // 4
     {
-        position: 4,
         title: "In which country was the caesar salad invented?",
         relatedAnswersProperty: "countryCaesarSalad",
-        answer1: {
-            answer: "Italy",
-            correct: false
-        },
-        answer2: {
-            answer: "Portugal",
-            correct: false
-        },
-        answer3: {
-            answer: "Mexico",
-            correct: true
-        },
-        answer4: {
-            answer: "France",
-            correct: false
-        }
+        answerOptions: [
+            {
+                answer: "Italy",
+                correct: false
+            },
+            {
+                answer: "Portugal",
+                correct: false
+            },
+            {
+                answer: "Mexico",
+                correct: true
+            },
+            {
+                answer: "France",
+                correct: false
+            }
+        ]
     },
 
     // 5
     {
-        position: 5,
         title: "How many hearts does an octopus have?",
         relatedAnswersProperty: "heartsOctopus",
-        answer1: {
-            answer: "One",
-            correct: false
-        },
-        answer2: {
-            answer: "Two",
-            correct: false
-        },
-        answer3: {
-            answer: "Three",
-            correct: true
-        },
-        answer4: {
-            answer: "Four",
-            correct: false
-        }
+        answerOptions: [
+            {
+                answer: "One",
+                correct: false
+            },
+            {
+                answer: "Two",
+                correct: false
+            },
+            {
+                answer: "Three",
+                correct: true
+            },
+            {
+                answer: "Four",
+                correct: false
+            }
+        ]
     },
 ]
