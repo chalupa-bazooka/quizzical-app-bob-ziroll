@@ -3,6 +3,7 @@ export const questionsData = [
     {
         position: 1,
         title: "How would one say goodbye in Spanish?",
+        relatedAnswersProperty: "goodbyeInSpanish",
         answer1: {
             answer: "Adiós",
             correct: true
@@ -25,6 +26,7 @@ export const questionsData = [
     {
         position: 2,
         title: "Which best selling toy of 1983 caused hysteria, resulting in riots breaking in stores?",
+        relatedAnswersProperty: "bestSellingToy1983",
         answer1: {
             answer: "Cabbage Patch Kids",
             correct: false
@@ -47,6 +49,7 @@ export const questionsData = [
     {
         position: 3,
         title: "What is the hottest planet in our Solar System?",
+        relatedAnswersProperty: "hottestPlanet",
         answer1: {
             answer: "Mercury",
             correct: false
@@ -69,6 +72,7 @@ export const questionsData = [
     {
         position: 4,
         title: "In which country was the caesar salad invented?",
+        relatedAnswersProperty: "countryCaesarSalad",
         answer1: {
             answer: "Italy",
             correct: false
@@ -91,6 +95,7 @@ export const questionsData = [
     {
         position: 5,
         title: "How many hearts does an octopus have?",
+        relatedAnswersProperty: "heartsOctopus",
         answer1: {
             answer: "One",
             correct: false
