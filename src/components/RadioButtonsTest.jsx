@@ -3,7 +3,7 @@ import { nanoid } from "nanoid";
 
 {/* 
 to do:
-- can we somehow map answers not to have them as 4 separate elements but as just one?
+– think of where to place the answers state
 - add submit button
 - on submit we gotta compare our states:
 answers (chosen answers) with questions (if the chosen answers are correct)
