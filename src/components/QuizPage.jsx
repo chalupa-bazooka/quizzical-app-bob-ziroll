@@ -1,6 +1,12 @@
-import Question from "./Question.jsx";
+// utilities
 import { useState } from "react";
 import { nanoid } from "nanoid";
+
+// components
+import Question from "./Question.jsx";
+
+// data
+import { questionsData } from "../data.js";
 
 {/* 
 to do:
@@ -12,7 +18,9 @@ answers (chosen answers) with questions (if the chosen answers are correct)
 - if successful, transfer the code to the Question component
 */}
 
-export default function QuizPage({ questions }) {
+export default function QuizPage() {
+    const [questions, setQuestions] = useState(questionsData)
+
     const [answers, setAnswers] = useState(() => {
         return questions.map((question) => {
             return question.relatedAnswerProperty;
