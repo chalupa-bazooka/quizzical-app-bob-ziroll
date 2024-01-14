@@ -135,7 +135,10 @@ body {
 }
 
 .Question__SingleAnswer,
-.Question__SingleAnswerChecked {
+.Question__SingleAnswerChecked,
+.Question__SingleAnswerCorrect,
+.Question__SingleAnswerTranluscent,
+.Question__SingleAnswerWrong {
     font-family: "Inter", sans-serif;
     font-size: 10.24px;
     border: 1px solid #4D5B9E;
@@ -150,11 +153,25 @@ body {
     box-sizing: border-box;
 }
 
+.Question__SingleAnswerInput {
+    display: none;
+}
+
 .Question__SingleAnswerChecked {
-    background: #D6DBF5;
+    background-color: #D6DBF5;
     border: none;
 }
 
-.Question__SingleAnswerInput {
-    display: none;
+.Question__SingleAnswerCorrect {
+    background-color: #94D7A2;
+    border: none;
+}
+
+.Question__SingleAnswerTranluscent {
+    opacity: 50%;
+}
+
+.Question__SingleAnswerWrong {
+    background-color: #F8BCBC;
+    border: none;
 }

@@ -1,15 +1,27 @@
 import { nanoid } from "nanoid";
+import { useEffect } from "react";
 
 export default function Question({ question, answers, handleChange, quizThrough }) {
 
+    console.log(quizThrough)
+
     function evaluateAnswer(answerOption) {
-        // if (!quizThrough) {
-        if (answers[question.relatedAnswersProperty] === answerOption.answer) {
-            return "Question__SingleAnswerChecked"
+        if (!quizThrough) {
+            if (answers[question.relatedAnswersProperty] === answerOption.answer) {
+                return "Question__SingleAnswerChecked"
+            } else {
+                return "Question__SingleAnswer"
+            }
         } else {
-            return "Question__SingleAnswer"
+            if (answerOption.correct) {
+                return "Question__SingleAnswerCorrect"
+            } else if (answers[question.relatedAnswersProperty] === answerOption.answer && !answerOption.correct) {
+                return "Question__SingleAnswerWrong"
+            } else {
+                return "Question__SingleAnswerTranluscent"
+            }
+
         }
-        // }
     }
 
     return (

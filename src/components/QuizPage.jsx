@@ -35,15 +35,15 @@ export default function QuizPage() {
     }
 
     // quizThrough logic
-    const [quizThrough, setQuizThrough] = useState(false)
+    const [quizThrough, setQuizThrough] = useState(true)
+
+
 
     function handleSubmit(event) {
         event.preventDefault()
         setQuizThrough(prevQuizThrough => !prevQuizThrough)
         console.log(quizThrough)
     }
-
-
 
     return (
         <form className="QuizPage__General" onSubmit={handleSubmit}>
@@ -56,7 +56,7 @@ export default function QuizPage() {
                             question={question}
                             answers={answers}
                             handleChange={handleChange}
-                            quizThrought={quizThrough}
+                            quizThrough={quizThrough}
                             key={nanoid()}
                         />
                     )
