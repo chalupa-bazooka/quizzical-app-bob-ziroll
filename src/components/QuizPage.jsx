@@ -10,7 +10,6 @@ import { questionsData } from "../data.js";
 
 {/* 
 to do:
-- add submit button
 - on submit we gotta compare our states:
 answers (chosen answers) with questions (if the chosen answers are correct)
 - correct answers gotta be highlighted with green (regardless of if previously selected)
@@ -19,8 +18,10 @@ answers (chosen answers) with questions (if the chosen answers are correct)
 */}
 
 export default function QuizPage() {
+    // questions
     const [questions, setQuestions] = useState(questionsData)
 
+    // answers-related logic
     const [answers, setAnswers] = useState(() => {
         return questions.map((question) => {
             return question.relatedAnswersProperty;
@@ -33,8 +34,18 @@ export default function QuizPage() {
         })
     }
 
+    // quizThrough logic
+    const [quizThrough, setQuizThrough] = useState(false)
+
+    function handleSubmit(event) {
+        event.preventDefault()
+        console.log("le submitte")
+    }
+
+
+
     return (
-        <div className="QuizPage__General">
+        <form className="QuizPage__General" onSubmit={handleSubmit}>
 
             {
                 // mapping questions objects (from the "questions" state)
@@ -53,7 +64,7 @@ export default function QuizPage() {
             <button className="QuizPage__Button">
                 Check answers
             </button>
-            
+
             <img
                 src="src/images/quizpage-blob-blue.png"
                 alt="blob blue quiz page"
@@ -64,6 +75,6 @@ export default function QuizPage() {
                 alt="blog orange quiz page"
                 className="QuizPage__Image--BlobOrange"
             />
-        </div>
+        </form>
     )
 }
