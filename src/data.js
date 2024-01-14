@@ -10,7 +10,7 @@ export const questionsData = [
                     correct: true
                 },
                 {
-                    answer: "Adiós",
+                    answer: "Hola",
                     correct: false
                 },
                 {
