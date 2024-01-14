@@ -10,11 +10,13 @@ import { questionsData } from "../data.js";
 
 {/* 
 to do:
-- on submit we gotta compare our states:
-answers (chosen answers) with questions (if the chosen answers are correct)
-- correct answers gotta be highlighted with green (regardless of if previously selected)
-- wrong answers gotta be highlighted with red (only if selected)
-- if successful, transfer the code to the Question component
+- change the button with the state (it must turn intro Restart when quizThrough is true);
+- the restart function should make everything as it was before the quiz started;
+- make buttons unclickable when quizThrough is true;
+- add Clear button to remove all clicks when quizThrough is false (remove all selections);
+- Clear button should only be visible when quizThrough is false;
+- make buttons reclickable when quizThrough is false: you should be able to select & deselect them;
+- make both IntroScreen & QuizPage component active simultaneously (perhaps you'll have to put QuizPage into IntroScreen for that)
 */}
 
 export default function QuizPage() {
@@ -35,7 +37,7 @@ export default function QuizPage() {
     }
 
     // quizThrough logic
-    const [quizThrough, setQuizThrough] = useState(true)
+    const [quizThrough, setQuizThrough] = useState(false)
 
 
 
