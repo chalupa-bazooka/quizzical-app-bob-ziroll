@@ -1,7 +1,6 @@
 // components
 import IntroScreen from "./components/IntroScreen";
 import QuizPage from "./components/QuizPage";
-import RadioButtonTest from "./components/RadioButtonsTest.jsx";
 
 // files
 import "./App.css"; // styles
@@ -15,7 +14,6 @@ export default function App() {
 
   return (
     <>
-      {/* <RadioButtonTest questions={questions}/> */}
       <QuizPage questions={questions}/>
       {/* <IntroScreen/> */}
     </>
