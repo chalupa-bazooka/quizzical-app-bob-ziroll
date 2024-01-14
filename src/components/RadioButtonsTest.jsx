@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
 
+import Question from "./Question";
+
 {/* 
 to do:
-– think of where to place the answers state
 - add submit button
 - on submit we gotta compare our states:
 answers (chosen answers) with questions (if the chosen answers are correct)
@@ -34,36 +35,43 @@ export default function RadioButtonTest({ questions }) {
                 // mapping question objects (from the "questions" state)
                 questions.map((question) => {
                     return (
-                        <div className="Question__General" key={nanoid()}>
-                            <p className="Question__Title">{question.title}</p>
-                            <fieldset className="Question__AnswersRow">
+                        <Question
+                            question={question}
+                            answers={answers}
+                            handleChange={handleChange}
+                            key={nanoid()}
+                        />
 
-                                {
-                                    // mapping answer options (objects inside answerOptions array from the "questions" state)
-                                    question.answerOptions.map((answerOption) => {
-                                        return (
-                                            <label
-                                                className=
-                                                {answers[question.relatedAnswersProperty] === answerOption.answer
-                                                    ? "Question__SingleAnswerCheckedTest"
-                                                    : "Question__SingleAnswerTest"}
-                                                key={nanoid()}
-                                            >
-                                                <input
-                                                    className="Question__SingleAnswerTestInput"
-                                                    type="radio"
-                                                    name={question.relatedAnswersProperty}
-                                                    value={answerOption.answer}
-                                                    checked={answers[question.relatedAnswersProperty] === answerOption.answer}
-                                                    onChange={handleChange}
-                                                />
-                                                {answerOption.answer}
-                                            </label>
-                                        )
-                                    })
-                                }
-                            </fieldset>
-                        </div>
+                        // <div className="Question__General" key={nanoid()}>
+                        //     <p className="Question__Title">{question.title}</p>
+                        //     <fieldset className="Question__AnswersRow">
+
+                        //         {
+                        //             // mapping answer options (objects inside answerOptions array from the "questions" state)
+                        //             question.answerOptions.map((answerOption) => {
+                        //                 return (
+                        //                     <label
+                        //                         className=
+                        //                         {answers[question.relatedAnswersProperty] === answerOption.answer
+                        //                             ? "Question__SingleAnswerCheckedTest"
+                        //                             : "Question__SingleAnswerTest"}
+                        //                         key={nanoid()}
+                        //                     >
+                        //                         <input
+                        //                             className="Question__SingleAnswerTestInput"
+                        //                             type="radio"
+                        //                             name={question.relatedAnswersProperty}
+                        //                             value={answerOption.answer}
+                        //                             checked={answers[question.relatedAnswersProperty] === answerOption.answer}
+                        //                             onChange={handleChange}
+                        //                         />
+                        //                         {answerOption.answer}
+                        //                     </label>
+                        //                 )
+                        //             })
+                        //         }
+                        //     </fieldset>
+                        // </div>
                     )
                 })
             }
