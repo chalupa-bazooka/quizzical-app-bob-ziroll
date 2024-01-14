@@ -39,7 +39,8 @@ export default function QuizPage() {
 
     function handleSubmit(event) {
         event.preventDefault()
-        console.log("le submitte")
+        setQuizThrough(prevQuizThrough => !prevQuizThrough)
+        console.log(quizThrough)
     }
 
 
@@ -55,6 +56,7 @@ export default function QuizPage() {
                             question={question}
                             answers={answers}
                             handleChange={handleChange}
+                            quizThrought={quizThrough}
                             key={nanoid()}
                         />
                     )
