@@ -1,6 +1,17 @@
-import {nanoid} from "nanoid";
+import { nanoid } from "nanoid";
 
-export default function Question({ question, answers, handleChange }) {
+export default function Question({ question, answers, handleChange, quizThrough }) {
+
+    function evaluateAnswer(answerOption) {
+        // if (!quizThrough) {
+        if (answers[question.relatedAnswersProperty] === answerOption.answer) {
+            return "Question__SingleAnswerChecked"
+        } else {
+            return "Question__SingleAnswer"
+        }
+        // }
+    }
+
     return (
         <div className="Question__General">
             <p className="Question__Title">{question.title}</p>
@@ -12,14 +23,11 @@ export default function Question({ question, answers, handleChange }) {
                     question.answerOptions.map((answerOption) => {
                         return (
                             <label
-                                className=
-                                {answers[question.relatedAnswersProperty] === answerOption.answer
-                                    ? "Question__SingleAnswerCheckedTest"
-                                    : "Question__SingleAnswerTest"}
+                                className={evaluateAnswer(answerOption)}
                                 key={nanoid()}
                             >
                                 <input
-                                    className="Question__SingleAnswerTestInput"
+                                    className="Question__SingleAnswerInput"
                                     type="radio"
                                     name={question.relatedAnswersProperty}
                                     value={answerOption.answer}
