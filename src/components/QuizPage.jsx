@@ -23,7 +23,7 @@ export default function QuizPage() {
 
     const [answers, setAnswers] = useState(() => {
         return questions.map((question) => {
-            return question.relatedAnswerProperty;
+            return question.relatedAnswersProperty;
         })
     })
 
