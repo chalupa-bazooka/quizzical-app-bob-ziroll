@@ -17,6 +17,7 @@ to do:
 - Clear button should only be visible when quizThrough is false;
 - make buttons reclickable when quizThrough is false: you should be able to select & deselect them;
 - make both IntroScreen & QuizPage component active simultaneously (perhaps you'll have to put QuizPage into IntroScreen for that)
+- if not all questions are answered, notify the user that they must answer all questions before checking answers
 */}
 
 export default function QuizPage() {
@@ -39,6 +40,16 @@ export default function QuizPage() {
     // quizThrough logic
     const [quizThrough, setQuizThrough] = useState(false)
 
+    function restart(event) {
+        event.preventDefault()
+        setQuizThrough(prevQuizThrough => !prevQuizThrough)
+        setAnswers(() => {
+            return questions.map((question) => {
+                return question.relatedAnswersProperty;
+            })
+        })
+    }
+
 
 
     function handleSubmit(event) {
@@ -48,7 +59,7 @@ export default function QuizPage() {
     }
 
     return (
-        <form className="QuizPage__General" onSubmit={handleSubmit}>
+        <form className="QuizPage__General" onSubmit={!quizThrough ? handleSubmit : restart}>
 
             {
                 // mapping questions objects (from the "questions" state)
@@ -65,9 +76,13 @@ export default function QuizPage() {
                 })
             }
 
-            <button className="QuizPage__Button">
-                Check answers
-            </button>
+            <div>
+                <button className="QuizPage__Button">
+                    {
+                        !quizThrough ? "Check answers" : "Restart"
+                    }
+                </button>
+            </div>
 
             <img
                 src="src/images/quizpage-blob-blue.png"
