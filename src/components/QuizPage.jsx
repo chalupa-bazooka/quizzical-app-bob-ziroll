@@ -15,6 +15,7 @@ to do:
 - make buttons reclickable when quizThrough is false: you should be able to select & deselect them;
 - make both IntroScreen & QuizPage component active simultaneously (perhaps you'll have to put QuizPage into IntroScreen for that)
 - if not all questions are answered, notify the user that they must answer all questions before checking answers
+- find a way to make cursor default for labels when quizThrough (with the adjacent operand, I guess (+))
 */}
 
 export default function QuizPage() {
