@@ -10,9 +10,6 @@ import { questionsData } from "../data.js";
 
 {/* 
 to do:
-- change the button with the state (it must turn intro Restart when quizThrough is true);
-- the restart function should make everything as it was before the quiz started;
-- make buttons unclickable when quizThrough is true;
 - add Clear button to remove all clicks when quizThrough is false (remove all selections);
 - Clear button should only be visible when quizThrough is false;
 - make buttons reclickable when quizThrough is false: you should be able to select & deselect them;
@@ -55,7 +52,6 @@ export default function QuizPage() {
     function handleSubmit(event) {
         event.preventDefault()
         setQuizThrough(prevQuizThrough => !prevQuizThrough)
-        console.log(quizThrough)
     }
 
     return (
