@@ -3,8 +3,6 @@ import { useEffect } from "react";
 
 export default function Question({ question, answers, handleChange, quizThrough }) {
 
-    console.log(quizThrough)
-
     function evaluateAnswer(answerOption) {
         if (!quizThrough) {
             if (answers[question.relatedAnswersProperty] === answerOption.answer) {
@@ -45,6 +43,7 @@ export default function Question({ question, answers, handleChange, quizThrough 
                                     value={answerOption.answer}
                                     checked={answers[question.relatedAnswersProperty] === answerOption.answer}
                                     onChange={handleChange}
+                                    disabled={!quizThrough ? "" : "disabled"}
                                 />
                                 {answerOption.answer}
                             </label>
