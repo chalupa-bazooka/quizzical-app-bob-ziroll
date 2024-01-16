@@ -89,6 +89,11 @@ body {
     cursor: pointer;
 }
 
+.QuizPage__ButtonBox {
+    display: flex;
+    gap: 15px;
+}
+
 .QuizPage__Image--BlobOrange {
     position: absolute;
     top: 0;
