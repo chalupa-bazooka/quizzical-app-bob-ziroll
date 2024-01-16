@@ -48,6 +48,15 @@ export default function QuizPage() {
         })
     }
 
+    function clear(event) {
+        event.preventDefault()
+        setAnswers(() => {
+            return questions.map((question) => {
+                return question.relatedAnswersProperty;
+            })
+        })
+    }
+
 
 
     function handleSubmit(event) {
@@ -56,7 +65,7 @@ export default function QuizPage() {
     }
 
     return (
-        <form className="QuizPage__General" onSubmit={!quizThrough ? handleSubmit : restart}>
+        <form className="QuizPage__General">
 
             {
                 // mapping questions objects (from the "questions" state)
@@ -73,12 +82,22 @@ export default function QuizPage() {
                 })
             }
 
+            {/* buttons at the bottom */}
             <div>
-                <button className="QuizPage__Button">
+                {/* this button checks answers or restarts the quiz */}
+                <button className="QuizPage__Button" onClick={!quizThrough ? handleSubmit : restart}>
                     {
                         !quizThrough ? "Check answers" : "Restart"
                     }
                 </button>
+
+                {/* this button clears all the selections when quiz is not through */}
+                {
+                    !quizThrough &&
+                    <button className="QuizPage__Button" onClick={clear}>
+                        Clear
+                    </button>
+                }
             </div>
 
             <img
