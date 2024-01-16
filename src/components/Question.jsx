@@ -43,6 +43,15 @@ export default function Question({ question, answers, handleChange, quizThrough 
                                     value={answerOption.answer}
                                     checked={answers[question.relatedAnswersProperty] === answerOption.answer}
                                     onChange={handleChange}
+                                    onClick={answers[question.relatedAnswersProperty] === answerOption.answer ? handleChange : undefined}
+                                    // This onClick is a weird thing but let me explain.
+                                    // I wanted the answers to be double-clickable:
+                                    // one click to select and the other to diselect.
+                                    // But onChange doesn't work like that, it doesn't register
+                                    // the second click as a change and does nothing.
+                                    // onClick, on the other hand, doesn't care.
+                                    // React, however, demands onChange to be present on checkable inputs.
+                                    // Hence, I added both but made onClick only work when onChange can't.
                                     disabled={!quizThrough ? "" : "disabled"}
                                 />
                                 {answerOption.answer}
