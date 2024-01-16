@@ -28,13 +28,15 @@ export default function QuizPage() {
     //     })
     // })
 
-    const [answers, setAnswers] = useState(() => {
+    function populateAnswers(){
         const answersObjectInitial = {}
         questions.map((question) => {
             return answersObjectInitial[question.relatedAnswersProperty] = "";
         })
         return answersObjectInitial
-    })
+    }
+    
+    const [answers, setAnswers] = useState(populateAnswers())
 
     console.log(answers)
 
@@ -54,24 +56,12 @@ export default function QuizPage() {
     function restart(event) {
         event.preventDefault()
         setQuizThrough(prevQuizThrough => !prevQuizThrough)
-        setAnswers(() => {
-            const answersObjectInitial = {}
-            questions.map((question) => {
-                return answersObjectInitial[question.relatedAnswersProperty] = "";
-            })
-            return answersObjectInitial
-        })
+        setAnswers(populateAnswers())
     }
 
     function clear(event) {
         event.preventDefault()
-        setAnswers(() => {
-            const answersObjectInitial = {}
-            questions.map((question) => {
-                return answersObjectInitial[question.relatedAnswersProperty] = "";
-            })
-            return answersObjectInitial
-        })
+        setAnswers(populateAnswers())
     }
 
 
