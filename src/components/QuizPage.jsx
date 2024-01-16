@@ -14,7 +14,7 @@ to do:
 - make both IntroScreen & QuizPage component active simultaneously (perhaps you'll have to put QuizPage into IntroScreen for that)
 - if not all questions are answered, notify the user that they must answer all questions before checking answers
 - find a way to make cursor default for labels when quizThrough (with the adjacent operand, I guess (+))
-- add click animation to buttons (not answer options) to make it clearer that they've been clicked
+- add click animation to buttons (not answer options) to make it clearer that they
 */}
 
 export default function QuizPage() {
@@ -24,13 +24,19 @@ export default function QuizPage() {
     // answers-related logic
     const [answers, setAnswers] = useState(() => {
         return questions.map((question) => {
-            return question.relatedAnswersProperty;
+            return {[question.relatedAnswersProperty]: ""}
         })
     })
 
+    console.log(answers)
+
     function handleChange(event) {
         setAnswers((prevAnswers) => {
-            return { ...prevAnswers, [event.target.name]: event.target.value }
+            if (prevAnswers[event.target.name] !== event.target.value) {
+                return { ...prevAnswers, [event.target.name]: event.target.value }
+            } else {
+                return { ...prevAnswers, [event.target.name]: ""}
+            }
         })
     }
 
