@@ -10,12 +10,11 @@ import { questionsData } from "../data.js";
 
 {/* 
 to do:
-- add Clear button to remove all clicks when quizThrough is false (remove all selections);
-- Clear button should only be visible when quizThrough is false;
 - make buttons reclickable when quizThrough is false: you should be able to select & deselect them;
 - make both IntroScreen & QuizPage component active simultaneously (perhaps you'll have to put QuizPage into IntroScreen for that)
 - if not all questions are answered, notify the user that they must answer all questions before checking answers
 - find a way to make cursor default for labels when quizThrough (with the adjacent operand, I guess (+))
+- add click animation to buttons (not answer options) to make it clearer that they've been clicked
 */}
 
 export default function QuizPage() {
@@ -83,7 +82,7 @@ export default function QuizPage() {
             }
 
             {/* buttons at the bottom */}
-            <div>
+            <div className="QuizPage__ButtonBox">
                 {/* this button checks answers or restarts the quiz */}
                 <button className="QuizPage__Button" onClick={!quizThrough ? handleSubmit : restart}>
                     {
@@ -95,7 +94,7 @@ export default function QuizPage() {
                 {
                     !quizThrough &&
                     <button className="QuizPage__Button" onClick={clear}>
-                        Clear
+                        Clear selections
                     </button>
                 }
             </div>
