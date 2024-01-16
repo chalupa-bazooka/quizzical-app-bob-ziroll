@@ -22,10 +22,18 @@ export default function QuizPage() {
     const [questions, setQuestions] = useState(questionsData)
 
     // answers-related logic
+    // const [answers, setAnswers] = useState(() => {
+    //     return questions.map((question) => {
+    //         return answers[question.relatedAnswersProperty] = ""
+    //     })
+    // })
+
     const [answers, setAnswers] = useState(() => {
-        return questions.map((question) => {
-            return {[question.relatedAnswersProperty]: ""}
+        const answersObjectInitial = {}
+        questions.map((question) => {
+            return answersObjectInitial[question.relatedAnswersProperty] = "";
         })
+        return answersObjectInitial
     })
 
     console.log(answers)
@@ -35,7 +43,7 @@ export default function QuizPage() {
             if (prevAnswers[event.target.name] !== event.target.value) {
                 return { ...prevAnswers, [event.target.name]: event.target.value }
             } else {
-                return { ...prevAnswers, [event.target.name]: ""}
+                return { ...prevAnswers, [event.target.name]: "" }
             }
         })
     }
@@ -47,18 +55,22 @@ export default function QuizPage() {
         event.preventDefault()
         setQuizThrough(prevQuizThrough => !prevQuizThrough)
         setAnswers(() => {
-            return questions.map((question) => {
-                return question.relatedAnswersProperty;
+            const answersObjectInitial = {}
+            questions.map((question) => {
+                return answersObjectInitial[question.relatedAnswersProperty] = "";
             })
+            return answersObjectInitial
         })
     }
 
     function clear(event) {
         event.preventDefault()
         setAnswers(() => {
-            return questions.map((question) => {
-                return question.relatedAnswersProperty;
+            const answersObjectInitial = {}
+            questions.map((question) => {
+                return answersObjectInitial[question.relatedAnswersProperty] = "";
             })
+            return answersObjectInitial
         })
     }
 
