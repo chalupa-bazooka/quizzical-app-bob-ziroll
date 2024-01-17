@@ -10,7 +10,7 @@ import { questionsData } from "../data.js";
 
 {/* 
 to do:
-- if not all questions are answered, notify the user that they must answer all questions before checking answers
+- style the notification "not all questions are answered"
 - find a way to make cursor default for labels when quizThrough (with the adjacent operand, I guess (+))
 - add click animation to buttons (not answer options) to make it clearer that they
 - make both IntroScreen & QuizPage component active simultaneously (perhaps you'll have to put QuizPage into IntroScreen for that)
@@ -27,17 +27,25 @@ export default function QuizPage() {
     //     })
     // })
 
-    function populateAnswers(){
+    function populateAnswers() {
         const answersObjectInitial = {}
         questions.map((question) => {
             return answersObjectInitial[question.relatedAnswersProperty] = "";
         })
         return answersObjectInitial
     }
-    
+
     const [answers, setAnswers] = useState(populateAnswers())
 
-    console.log(answers)
+    function checkIfAllAnswered() {
+        let selectedAnswers = 0
+        questions.map((question) => {
+            if (answers[question.relatedAnswersProperty] !== "") {
+                selectedAnswers++; // with each clicked answer, it grows by one
+            }
+        })
+        return selectedAnswers === questions.length // returns true if they are equal
+    }
 
     function handleChange(event) {
         setAnswers((prevAnswers) => {
@@ -63,11 +71,16 @@ export default function QuizPage() {
         setAnswers(populateAnswers())
     }
 
-
+    const [submitAttemptWrong, setSubmitAttemptWrong] = useState(false)
 
     function handleSubmit(event) {
         event.preventDefault()
-        setQuizThrough(prevQuizThrough => !prevQuizThrough)
+        if (checkIfAllAnswered()) {
+            setQuizThrough(prevQuizThrough => !prevQuizThrough)
+            setSubmitAttemptWrong(false)
+        } else {
+            setSubmitAttemptWrong(true)
+        }
     }
 
     return (
@@ -86,6 +99,13 @@ export default function QuizPage() {
                         />
                     )
                 })
+            }
+
+            {
+                submitAttemptWrong &&
+                <div>
+                    What the hell? Answer all the questions first!
+                </div>
             }
 
             {/* buttons at the bottom */}
