@@ -10,9 +10,6 @@ import { questionsData } from "../data.js";
 
 {/* 
 to do:
-- style the notification "not all questions are answered"
-- find a way to make cursor default for labels when quizThrough (with the adjacent operand, I guess (+))
-- add click animation to buttons (not answer options) to make it clearer that they
 - make both IntroScreen & QuizPage component active simultaneously (perhaps you'll have to put QuizPage into IntroScreen for that)
 */}
 
