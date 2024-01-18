@@ -106,6 +106,45 @@ body {
     left: 0;
 }
 
+.QuizPage__Notification {
+    /* position */
+    position: absolute;
+    display: flex;
+    bottom: 70px;
+    /* div background */
+    background-color: #F8BCBC;
+    padding: 5px 10px;
+    /* border */
+    border: 1px solid #4D5B9E;
+    border-radius: 10px;
+}
+
+.QuizPage__Notification p {
+    margin: 0px;
+}
+
+.QuizPage__Notification button {
+    /* position */
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    /* "x" styles */
+    font-size: 10px;
+    color: #293264;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* button background */
+    background-color: #DBDEF0;
+    width: 18px;
+    height: 18px;
+    /* border */
+    border: 1px solid #4D5B9E;
+    border-radius: 8px;
+    /* misc. */
+    cursor: pointer;
+}
+
 
 
 
