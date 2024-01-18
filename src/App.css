@@ -193,7 +193,6 @@ body {
     min-width: 65.92px;
     height: 20.65px;
     padding: 0 9px;
-    cursor: pointer;
     box-sizing: border-box;
 }
 
@@ -201,9 +200,14 @@ body {
     display: none;
 }
 
+.Question__SingleAnswer {
+    cursor: pointer;
+}
+
 .Question__SingleAnswerChecked {
     background-color: #D6DBF5;
     border: none;
+    cursor: pointer;
 }
 
 .Question__SingleAnswerCorrect {
