@@ -103,8 +103,12 @@ export default function QuizPage() {
 
             {
                 submitAttemptWrong &&
-                <div>
-                    What the hell? Answer all the questions first!
+                <div className="QuizPage__Notification">
+                    <p>Answer all the questions first!</p>
+                    <button
+                    onClick={() => setSubmitAttemptWrong(false)}
+                    >
+                        ✕</button>
                 </div>
             }
 
