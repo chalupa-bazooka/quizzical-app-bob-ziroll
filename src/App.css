@@ -89,11 +89,17 @@ body {
     cursor: pointer;
 }
 
+.QuizPage__Button:active {
+    background: #384276;
+}
+
 .QuizPage__ButtonBox {
     display: flex;
     gap: 15px;
 }
 
+
+/* blobs (decoration in the corners) */
 .QuizPage__Image--BlobOrange {
     position: absolute;
     top: 0;
@@ -106,6 +112,8 @@ body {
     left: 0;
 }
 
+
+/* notification: answer all the questions first */
 .QuizPage__Notification {
     /* position */
     position: absolute;
