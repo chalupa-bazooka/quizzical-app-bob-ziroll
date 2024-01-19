@@ -8,21 +8,9 @@ import Question from "./Question.jsx";
 // data
 import { questionsData } from "../data.js";
 
-{/* 
-to do:
-- make both IntroScreen & QuizPage component active simultaneously (perhaps you'll have to put QuizPage into IntroScreen for that)
-*/}
-
-export default function QuizPage() {
+export default function QuizPage({switchQuiz}) {
     // questions
     const [questions, setQuestions] = useState(questionsData)
-
-    // answers-related logic
-    // const [answers, setAnswers] = useState(() => {
-    //     return questions.map((question) => {
-    //         return answers[question.relatedAnswersProperty] = ""
-    //     })
-    // })
 
     function populateAnswers() {
         const answersObjectInitial = {}
@@ -137,6 +125,9 @@ export default function QuizPage() {
                 alt="blog orange quiz page"
                 className="QuizPage__Image--BlobOrange"
             />
+            <button className="QuizPage__BackToIntro" onClick={switchQuiz}>
+                Back to Intro Screen
+            </button>
         </form>
     )
 }
