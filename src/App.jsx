@@ -10,10 +10,12 @@ import {questionsData} from "./data.js"; // data
 import {useState} from "react";
 
 export default function App() {
+  const [quizStart, setQuizStart] = useState(false)
+
   return (
     <>
-      <QuizPage />
-      {/* <IntroScreen/> */}
+      <IntroScreen quizStart={quizStart} setQuizStart={setQuizStart}/>
+      {/* <QuizPage /> */}
     </>
   )
 }
