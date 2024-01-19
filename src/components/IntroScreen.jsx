@@ -1,8 +1,8 @@
 import QuizPage from "./QuizPage"
 
 export default function IntroScreen({quizStart, setQuizStart}) {
-    function startQuiz(){
-        setQuizStart(true)
+    function switchQuiz(){
+        setQuizStart(prevQuizStart => !prevQuizStart)
     }
 
     return (
@@ -12,7 +12,7 @@ export default function IntroScreen({quizStart, setQuizStart}) {
                 <div className="IntroScreen__General">
                     <h1 className="IntroScreen__Title">Quizzical</h1>
                     <p className="IntroScreen__Subtitle">Some description if needed</p>
-                    <button className="IntroScreen__Button" onClick={startQuiz}>Start quiz</button>
+                    <button className="IntroScreen__Button" onClick={switchQuiz}>Start quiz</button>
                     <img
                         className="IntroScreen__Image--BlobOrange"
                         src="src/images/blob-orange.png"
@@ -24,7 +24,7 @@ export default function IntroScreen({quizStart, setQuizStart}) {
                         alt="blob blue"
                     />
                 </div>
-                : <QuizPage quizStart={quizStart} setQuizStart={setQuizStart}/>
+                : <QuizPage switchQuiz={switchQuiz}/>
             }
         </>
     )
