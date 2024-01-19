@@ -153,6 +153,21 @@ body {
     cursor: pointer;
 }
 
+.QuizPage__BackToIntro {
+    /* appearence */
+    background: none;
+    border: none;
+    color: #4D5B9E;
+    font-size: 0.75rem;
+    text-decoration: underline;
+    cursor: pointer;
+
+    /* position */
+    position: absolute;
+    bottom: 0;
+    right: -2px;
+}
+
 
 
 
